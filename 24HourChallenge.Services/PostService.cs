@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _24HourChallenge.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,20 @@ namespace _24HourChallenge.Services
             _userID = userID;
         }
 
-    
+        public bool CreatePost(UserPost model)
+        {
+            var entity =
+                new UserPost()
+                {
+                    Id = model.Id,
+                    Title = model.Title,
+                    Text = model.Text,
+                    Comments = model.Comments,
+                    Author = _userID, 
+                };
+              
+           
+        }
        
     }
 }
