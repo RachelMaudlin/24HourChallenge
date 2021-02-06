@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _24HourChallenge.Data
 {
-    class Post
+     public class Post
     {
         [Key]
         public Guid OwnerId { get; set; }
