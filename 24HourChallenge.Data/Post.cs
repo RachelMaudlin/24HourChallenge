@@ -22,6 +22,8 @@ namespace _24HourChallenge.Data
         [Required]
         public string CommentText { get; set; }
         [Required]
+
+       
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset? ModifiedUtc { get; set; }
