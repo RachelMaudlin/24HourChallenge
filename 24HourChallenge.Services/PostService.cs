@@ -1,4 +1,5 @@
-﻿using _24HourChallenge.Models;
+﻿using _24HourChallenge.Data;
+using _24HourChallenge.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,8 +28,13 @@ namespace _24HourChallenge.Services
                     Comments = model.Comments,
                     Author = _userID, 
                 };
-              
-           
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Posts.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+
         }
        
     }

@@ -18,7 +18,7 @@ namespace _24HourChallenge.Models
         [Required]
         public string Text { get; set; }
 
-        public virtual List<Comment> Comments { get; set; } = new List<Comment>();
+        public virtual List<UserComment> Comments { get; set; } = new List<UserComment>();
 
         [Required]
         public Guid Author { get; set; }
