@@ -17,16 +17,18 @@ namespace _24HourChallenge.Services
             _userID = userID;
         }
 
-        public bool CreatePost(UserPost model)
+        public bool CreatePost(Post model)
         {
             var entity =
-                new UserPost()
+                new Post()
                 {
-                    Id = model.Id,
+                    OwnerId = _userID,
+                    PostId = model.PostId,
                     Title = model.Title,
-                    Text = model.Text,
-                    Comments = model.Comments,
-                    Author = _userID, 
+                    PostText = model.PostText,
+                    CommentId = model.CommentId,
+                    CommentText = model.CommentText,
+                    CreatedUtc = DateTimeOffset.Now,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -37,5 +39,6 @@ namespace _24HourChallenge.Services
 
         }
        
+        
     }
 }
